@@ -1,0 +1,18 @@
+name: "Secrets Scan"
+
+on:
+  push:
+    branches: [ master, main, dev, feat/security-scan ]
+  pull_request:
+    branches:
+      - master # branch you want to trigger a scan on when updated
+      - main
+      - dev
+      - feat/security-scan
+
+jobs:
+  secret-audit:
+    name: "Trigger Nodejs Scan" # modify to suit project name
+    uses: Xttreme/cross-github-actions/.github/workflows/nodejs-audit.yaml@nodejs
+    with:
+      runs-on: ubuntu-latest
