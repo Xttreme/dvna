@@ -12,7 +12,7 @@ on:
 
 jobs:
   secret-audit:
-    name: "Trigger Mobile Audit" # modify to suit project name
+    name: "Trigger Nodejs Scan" # modify to suit project name
     uses: Xttreme/cross-github-actions/.github/workflows/nodejs-audit.yaml@nodejs
     with:
       runs-on: ubuntu-latest
